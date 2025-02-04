@@ -1,39 +1,42 @@
-// import { BrowserRouter,Routes,Route } from "react-router-dom"; 
-// import { LoginPage } from "./Routes.jsx"
-// import { SignupPage } from "./Routes.jsx"
+// backend/app.js
 
-// import './App.css';
+const express = require("express");
+const path = require("path");
+const cors = require("cors");
+const cookieParser = require("cookie-parser");
+const bodyParser = require("body-parser");
+const ErrorHandler = require("./middleware/error");
+const product = require("./controller/product");
 
-// function App(){
-//   return(
-//     <BrowserRouter>
-//       <Routes>
-//         <Route path="/Login" element={<LoginPage/>}/>
-//         <Route path="/SignUp" element={<SignupPage/>}/>
+const app = express();
 
-//       </Routes>
-//     </BrowserRouter>
-//   )
-// }
+// Middleware
+app.use(express.json());
+app.use(cookieParser());
 
-// export default App;
+// Configure CORS to allow requests from React frontend
+app.use(
+  cors({
+    origin: "http://localhost:3000", // Update this if your frontend is hosted elsewhere
+    credentials: true, // Enable if you need to send cookies or authentication headers
+  })
+);
 
-import { BrowserRouter , Routes , Route} from "react-router-dom";
-import { LoginPage , SignupPage, Home, CreateProduct } from "./Routes.jsx";
-import './App.css' ;
-// import Home from "./Pages/Home.jsx";
-function App (){
-  return (
-    <BrowserRouter>
-    <Routes>
-      <Route path="/login" element={<LoginPage/>} />
-      <Route path="/signup" element={<SignupPage/>} />
-      <Route path="/" element={<Home/>} />
-      <Route path="/create-page" element={<CreateProduct/>} />
+app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
 
-    
-    </Routes>
-    </BrowserRouter>
-  )
-}
-export default App;
+// Serve static files for uploads and products
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+app.use("/products", express.static(path.join(__dirname, "products")));
+
+// Import Routes
+const userRoutes = require("./controller/user");
+const productRoutes = require("./controller/product");
+
+// Route Handling
+app.use("/api/v2/user", userRoutes);
+app.use("/api/v2/product", productRoutes);
+
+// Error Handling Middleware
+app.use(ErrorHandler);
+
+module.exports = app;
