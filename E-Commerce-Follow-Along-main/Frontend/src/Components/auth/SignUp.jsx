@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { React, useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { Link } from "react-router-dom";
@@ -11,6 +12,22 @@ const Signup = () => {
     const [visible, setVisible] = useState(false);
     const [avatar, setAvatar] = useState(null);
     const [errors, setErrors] = useState({});
+=======
+import {useState} from "react";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import styles from "../styles/styles";
+import { Link } from "react-router-dom";
+import { RxAvatar } from "react-icons/rx";
+import axios from "axios";
+
+const Signup = () => {
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
+  const [visible, setVisible] = useState(false);
+  const [avatar, setAvatar] = useState(null);
+
+>>>>>>> 833dff5 (milstone13)
   const handleFileSubmit = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -19,6 +36,7 @@ const Signup = () => {
       setAvatar(file);
     }
   };
+<<<<<<< HEAD
   const validateFields = () => {
     const nameError = ValidationFormObject.validteName(name);
     const emailError = ValidationFormObject.validteEmail(email);
@@ -35,6 +53,12 @@ const Signup = () => {
     if (!validateFields()) {
       return; // Stop submission if validation fails
     }
+=======
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+>>>>>>> 833dff5 (milstone13)
     const newForm = new FormData();
     newForm.append("file", avatar);
     newForm.append("name", name);
@@ -43,6 +67,7 @@ const Signup = () => {
     const config = {
       headers: {
         "Content-Type": "multipart/form-data",
+<<<<<<< HEAD
         "Accept": "any",
       },
     };
@@ -55,6 +80,23 @@ const Signup = () => {
 };
 
 return (
+=======
+        Accept: "any",
+      },
+    };
+
+    axios
+      .post("http://localhost:7000/api/v2/user/create-user", newForm, config)
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  return (
+>>>>>>> 833dff5 (milstone13)
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
@@ -76,6 +118,7 @@ return (
                   type="text"
                   name="name"
                   autoComplete="name"
+<<<<<<< HEAD
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   className={`appearance-none block w-full px-3 py-2 border ${
@@ -87,6 +130,16 @@ return (
                 )}
               </div>
             </div>
+=======
+                  required
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                />
+              </div>
+            </div>
+
+>>>>>>> 833dff5 (milstone13)
             <div>
               <label
                 htmlFor="email"
@@ -99,6 +152,7 @@ return (
                   type="email"
                   name="email"
                   autoComplete="email"
+<<<<<<< HEAD
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className={`appearance-none block w-full px-3 py-2 border ${
@@ -108,6 +162,13 @@ return (
                 {errors.email && (
                   <p className="text-red-500 text-xs mt-1">{errors.email}</p>
                 )}
+=======
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                />
+>>>>>>> 833dff5 (milstone13)
               </div>
             </div>
             <div>
@@ -122,6 +183,7 @@ return (
                   type={visible ? "text" : "password"}
                   name="password"
                   autoComplete="current-password"
+<<<<<<< HEAD
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className={`appearance-none block w-full px-3 py-2 border ${
@@ -130,6 +192,14 @@ return (
                 />
 
 {visible ? (
+=======
+                  required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                />
+                {visible ? (
+>>>>>>> 833dff5 (milstone13)
                   <AiOutlineEye
                     className="absolute right-2 top-2 cursor-pointer"
                     size={25}
@@ -142,11 +212,17 @@ return (
                     onClick={() => setVisible(true)}
                   />
                 )}
+<<<<<<< HEAD
                 {errors.password && (
                   <p className="text-red-500 text-xs mt-1">{errors.password}</p>
                 )}
               </div>
             </div>
+=======
+              </div>
+            </div>
+
+>>>>>>> 833dff5 (milstone13)
             <div>
               <label
                 htmlFor="avatar"
@@ -180,6 +256,10 @@ return (
                 </label>
               </div>
             </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 833dff5 (milstone13)
             <div>
               <button
                 type="submit"
@@ -188,7 +268,11 @@ return (
                 Submit
               </button>
             </div>
+<<<<<<< HEAD
             <div className="flex items-center w-full">
+=======
+            <div className={`${styles.noramlFlex} w-full`}>
+>>>>>>> 833dff5 (milstone13)
               <h4>Already have an account?</h4>
               <Link to="/login" className="text-blue-600 pl-2">
                 Sign In
@@ -200,6 +284,7 @@ return (
     </div>
   );
 };
+<<<<<<< HEAD
 export default Signup;
 
 
@@ -389,3 +474,7 @@ export default Signup;
 // };
 
 // export default Signup;
+=======
+
+export default Signup;
+>>>>>>> 833dff5 (milstone13)
