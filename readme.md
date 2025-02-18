@@ -286,3 +286,11 @@ Set up a GET request in your backend to retrieve cart items for a specific user.
 ⿢ Fetch Products from the Database
 Query the database using the user’s email to retrieve all products in their cart.
 Return the fetched products as a JSON response.
+## Milestone 19 - Cart Functionality
+- Built a frontend cart page displaying products.
+- Added `+` and `-` buttons for quantity control.
+- Created backend API to update product quantity dynamically.
+## Milestone 20 - Profile Page
+- Created an API endpoint to serve user details.
+- Built a frontend profile page displaying name, email, profile photo, and addresses.
+- Added an "Add Address" button with a fallback message if no addresses exist.
