@@ -294,7 +294,7 @@ Return the fetched products as a JSON response.
 - Created an API endpoint to serve user details.
 - Built a frontend profile page displaying name, email, profile photo, and addresses.
 - Added an "Add Address" button with a fallback message if no addresses exist.
-Milestone 21: Address Form 🏡
+## Milestone 21: Address Form 🏡
 
 Learning Goals 🎯
 
@@ -309,7 +309,7 @@ Steps 📝
 	2.	Implement state management for the form inputs.
 	3.	Enable navigation from the profile page to the form.
 
-Milestone 22 - Store User Address 🏠
+## Milestone 22 - Store User Address 🏠
 
 Learning Goals 🎯
 
