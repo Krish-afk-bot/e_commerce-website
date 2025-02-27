@@ -294,3 +294,29 @@ Return the fetched products as a JSON response.
 - Created an API endpoint to serve user details.
 - Built a frontend profile page displaying name, email, profile photo, and addresses.
 - Added an "Add Address" button with a fallback message if no addresses exist.
+Milestone 21: Address Form 🏡
+
+Learning Goals 🎯
+
+By the end of this milestone, you will:
+	•	Create a frontend form for address input.
+	•	Collect country, city, address1, address2, zip code, and address type.
+	•	Manage form state to store the input address.
+	•	Navigate to this form when clicking “Add Address” in the profile.
+
+Steps 📝
+	1.	Build the address form page.
+	2.	Implement state management for the form inputs.
+	3.	Enable navigation from the profile page to the form.
+
+Milestone 22 - Store User Address 🏠
+
+Learning Goals 🎯
+
+By the end of this milestone, you will:
+✅ Create a backend endpoint to store user addresses in the database.
+
+Steps 📝
+	1.	Create an endpoint to receive the address from the frontend form.
+	2.	Append the address to the address array inside the user collection.
+	3.	Ensure proper request validation and error handling.
