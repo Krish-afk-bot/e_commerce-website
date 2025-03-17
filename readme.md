@@ -260,41 +260,74 @@ Steps 📝
 	2.	Add a quantity selection option for users.
 	3.	Implement an “Add to Cart” button for easy purchase.
 
-# Cart Functionality - Milestone 17 **
-📌 Overview
-This milestone focuses on implementing a cart feature by creating an endpoint that allows users to add products to their cart and store them in the database.
+Milestone 17 - Add to Cart 🛒
 
-🎯 Learning Objectives
-By completing this milestone, we:
-✔ Edited the user schema to store cart products.
-✔ Created a Cart schema to store products separately.
-✔ Developed a backend API endpoint to add products to the cart.
-✔ Successfully stored cart data in the database (MongoDB Atlas).
+Overview
 
-# Fetch Cart Items - Milestone 18
-📌 Overview
-In this milestone, we will implement a backend endpoint to fetch all products inside a user's cart. This will allow the cart page to display the items stored in the database.
+In this milestone, you’ll implement a backend endpoint to add products to a cart and store them in the database.
 
-🎯 Learning Goals
-By the end of this milestone, you will:
-✅ Create an endpoint to receive requests from the cart page.
-✅ Implement backend logic to fetch all products inside the cart using the user's email.
+Learning Goals 🎯
+	•	Update the user schema to store cart products.
+	•	Create an API endpoint to add product details to the cart.
 
-🏗 Steps for Implementation
-⿡ Create an Endpoint for the Cart Page
-Set up a GET request in your backend to retrieve cart items for a specific user.
-⿢ Fetch Products from the Database
-Query the database using the user’s email to retrieve all products in their cart.
-Return the fetched products as a JSON response.
-## Milestone 19 - Cart Functionality
-- Built a frontend cart page displaying products.
-- Added `+` and `-` buttons for quantity control.
-- Created backend API to update product quantity dynamically.
-## Milestone 20 - Profile Page
-- Created an API endpoint to serve user details.
-- Built a frontend profile page displaying name, email, profile photo, and addresses.
-- Added an "Add Address" button with a fallback message if no addresses exist.
-## Milestone 21: Address Form 🏡
+Steps 📝
+	1.	Define the cart schema to store products.
+	2.	Implement an endpoint to receive and store product details in the cart.
+
+Milestone 18 - Fetch Cart Products 🛒
+
+Overview
+
+In this milestone, you’ll implement a backend endpoint to fetch all products in a user’s cart for display on the cart page.
+
+Learning Goals 🎯
+	•	Create an endpoint to handle requests from the cart page.
+	•	Fetch all cart products using the user’s email.
+
+Steps 📝
+	1.	Define a backend endpoint for the cart page.
+	2.	Implement logic to retrieve products from the cart based on the user’s email.
+
+
+
+Milestone 19 - Cart Functionality 🛒
+
+Overview
+
+In this milestone, you’ll build a Cart UI and implement an endpoint to increase/decrease product quantity in the cart.
+
+Learning Goals 🎯
+	•	Display products in the cart (using the endpoint from Milestone 18).
+	•	Add + and - buttons to modify product quantity.
+	•	Create backend endpoints to update quantity.
+
+Steps 📝
+	1.	Frontend: Create a cart page and display products.
+	2.	UI Controls: Add + and - buttons for quantity updates.
+	3.	Backend: Implement an endpoint to modify product quantity.
+
+
+
+Milestone 20 - Profile Page 🏠
+
+Overview
+
+In this milestone, you’ll build a Profile Page UI and implement an endpoint to fetch and display user data.
+
+Learning Goals 🎯
+	•	Create a backend endpoint to send user data via email.
+	•	Build a frontend profile page to display user details.
+	•	Show profile photo, name, email, and addresses.
+
+Steps 📝
+	1.	Backend: Create an endpoint to send user data.
+	2.	Frontend: Develop a profile page layout.
+	3.	Display User Info:
+	•	Section 1: Profile photo, name, and email.
+	•	Section 2: Address list with an “Add Address” button.
+	•	If no address exists, show “No address found”.
+
+Milestone 21: Address Form 🏡
 
 Learning Goals 🎯
 
@@ -309,7 +342,7 @@ Steps 📝
 	2.	Implement state management for the form inputs.
 	3.	Enable navigation from the profile page to the form.
 
-## Milestone 22 - Store User Address 🏠
+Milestone 22 - Store User Address 🏠
 
 Learning Goals 🎯
 
@@ -319,4 +352,80 @@ By the end of this milestone, you will:
 Steps 📝
 	1.	Create an endpoint to receive the address from the frontend form.
 	2.	Append the address to the address array inside the user collection.
-	3.	Ensure proper request validation and error handling.
+	3.	Ensure proper request validation and error handling.
+
+# Milestone 23 🚀  
+
+## Overview  
+In this milestone, we will:  
+- Add a *"Place Order"* button in the cart.  
+- Create a *Select Address* page for choosing a delivery address.  
+- Write a *Mongoose schema* for storing order details.  
+
+## Steps  
+1. Add a *Place Order* button in the cart that navigates to the Select Address page.  
+2. Create a *Select Address* page displaying all saved addresses with a selection option.  
+3. Implement a *backend endpoint* to fetch user addresses.  
+
+### Note  
+This milestone helps in understanding how to implement the *place order* functionality.  
+
+# Milestone 24 🚀  
+
+## Overview  
+In this milestone, we will create an *Order Confirmation* page to display order details.  
+
+## Steps  
+1. Show all *products* being ordered.  
+2. Display the *selected delivery address*.  
+3. Show the *total cart value*.  
+4. Add a *"Place Order"* button at the bottom.  
+
+### Note  
+This milestone helps in understanding how to implement the *place order* functionality.  
+
+
+#Milestone 25 - Place Order API 🚀
+
+In this milestone, we created a backend endpoint for placing orders.
+
+🛠 Steps Implemented:
+	•	Received products, user, and address details.
+	•	Retrieved _id of the user using their email.
+	•	Created separate orders for each product with the same address.
+	•	Stored order details in the MongoDB orders collection.
+
+Milestone 26 - Get User Orders API 🚀
+
+In this milestone, we created a backend endpoint to retrieve all orders of a user.
+
+🛠 Steps Implemented:
+	•	Received user email from the request.
+	•	Retrieved _id of the user using their email.
+	•	Fetched all orders associated with the user from the MongoDB orders collection.
+	•	Sent the user’s orders in the response.
+
+Milestone 27 - My Orders Page 🛒
+
+Overview
+
+Create a frontend page to display all user orders.
+
+Steps
+	1.	Build a My Orders page.
+	2.	Send a GET request to the /my-orders endpoint.
+	3.	Pass the user’s email to retrieve orders.
+	4.	Display the fetched orders.
+	5.	Add My Orders to the navbar for easy access.
+
+Milestone 28 - Cancel Order Feature ❌
+
+Overview
+
+Add a Cancel Order button and create a backend endpoint to handle cancellations.
+
+Steps
+	1.	Add a Cancel Order button for each order in My Orders.
+	2.	Hide the button if the order is already canceled.
+	3.	Create a backend endpoint to receive the order-id.
+	4.	Retrieve the order, update its status to canceled, and save.
