@@ -33,7 +33,7 @@ export default function CartProduct({ _id, name, images, quantity, price }) {
 				'Content-Type': 'application/json',
 			},
 			body: JSON.stringify({
-				email: 'krishagarwal52139@gamil.com',
+				email: 'krishagarwal52139@gmail.com',
 				productId: _id,
 				quantity,
 			}),
