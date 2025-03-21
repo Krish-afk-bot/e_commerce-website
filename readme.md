@@ -429,3 +429,19 @@ Steps
 	2.	Hide the button if the order is already canceled.
 	3.	Create a backend endpoint to receive the order-id.
 	4.	Retrieve the order, update its status to canceled, and save.
+## Milestone 29 - PayPal API Integration
+
+### What was achieved:
+- Successfully integrated PayPal API in the order confirmation page.
+- Added radio buttons for COD and PayPal as payment options.
+- Displayed PayPal buttons dynamically when online payment is selected.
+- Configured PayPal sandbox credentials to test payments.
+- Ensured PayPal payments are processed securely.
+## Milestone 30 - PayPal API Integration Using react-paypal-js
+
+### What was achieved:
+- Implemented PayPal payment option in a React application using `react-paypal-js`.
+- Created order confirmation page with dynamic radio buttons for COD and PayPal.
+- Added PayPal Buttons that handle payment and transaction approval.
+- Configured PayPal Sandbox for secure and error-free testing.
+- Ensured smooth online payment experience for users.
