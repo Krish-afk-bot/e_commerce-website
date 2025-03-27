@@ -445,3 +445,25 @@ Steps
 - Added PayPal Buttons that handle payment and transaction approval.
 - Configured PayPal Sandbox for secure and error-free testing.
 - Ensured smooth online payment experience for users.
+## Milestone 31 - Redux Implementation
+In this milestone, I learned:
+- How to use Redux for global state management.
+- Configured a Redux store to manage global user email state.
+- Created actions to modify the state.
+- Wrapped the App component in the Provider to give global access.
+- Successfully implemented Redux to store and modify user data.
+## Milestone 32 - Accessing Email State with Redux
+In this milestone, I successfully:
+
+- Used `dispatch()` to store the email in the Redux global state from the `Login` page.
+- Accessed the email stored in the global state using `useSelector` across all pages.
+- Implemented Redux state management to dynamically update and retrieve user data.
+## Milestone 33 - JWT Token with Cookie
+In this milestone, I successfully:
+
+- Learned how to generate a **JWT token** with `jsonwebtoken`.
+- Configured a secure cookie to store the JWT token in the browser.
+- Used `maxAge` to set expiration for the cookie.
+- Implemented token verification middleware to protect secure routes.
+
+

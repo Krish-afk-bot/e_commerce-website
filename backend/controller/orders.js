@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const Order = require('../model/order'); // Adjust path as needed
-const User = require('../model/user');   // Adjust path as needed
+const Order = require('../model/order'); 
+const User = require('../model/user');    
 
 router.post('/place-order', async (req, res) => {
     try {
@@ -27,7 +27,7 @@ router.post('/place-order', async (req, res) => {
             
             const order = new Order({
                 user: user._id,
-                orderItems: [item], // Each order contains a single item
+                orderItems: [item], 
                 shippingAddress,
                 totalAmount,    
             });
@@ -48,7 +48,7 @@ router.get('/my-orders', async (req, res) => {
     try {
         const { email } = req.query;
 
-        // Validate the email parameter
+        
         if (!email) {
             return res.status(400).json({ message: 'Email is required.' });
         }
